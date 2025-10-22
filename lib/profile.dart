@@ -5,49 +5,41 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Tio Risnanto'),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.redAccent,
+        title: const Text(
+          'My Profile',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-        /**
-         * ROW & COLUMN BISA MEMILKI BANYAK WIDGET
-         * ROW ITU KE SAMPING
-         * COLUM ITU KE BAWAH
-         */
-        body: Column(
-          children: <Widget>[
-            SizedBox(
-              width: 200,
-              child: Container(
-                width: 200,
-                child: Text(
-                  'NAMA',
-                  style: TextStyle(
-                    color: Colors.amber,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    backgroundColor: Colors.redAccent,
-                    fontFamily: 'Poppins', // harus ada fontnya
-                  ),
-                ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Ucup Guerero',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            Text(
-              'UCUP',
-              style: TextStyle(
-                backgroundColor: Color.fromARGB(
-                  200,
-                  100,
-                  100,
-                  100,
+            Row(
+              children: <Widget>[
+                Column(
+                  children: <Widget>[],
                 ),
-              ),
+                Column(
+                  children: <Widget>[],
+                ),
+              ],
             ),
           ],
         ),
       ),
-      debugShowCheckedModeBanner: false,
     );
   }
 }
