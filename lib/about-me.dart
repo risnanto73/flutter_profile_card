@@ -3,6 +3,27 @@ import 'package:flutter/material.dart';
 class AboutMe extends StatelessWidget {
   const AboutMe({super.key});
 
+  final List<String> badgeList = const <String>[
+    '😂',
+    '🤣',
+    '✅',
+    '➖',
+    '⚙️',
+    '❌',
+    '💡',
+    '📊',
+    '🧪',
+    '🥲',
+    '🚢',
+    '🏍️'
+  ];
+
+  /**
+   * Tampilkan data image dari internet menggunkan listView
+   * buat imagenya menjadi bentuk lingkaran
+   * minimal 5 image
+   */
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +37,7 @@ class AboutMe extends StatelessWidget {
         backgroundColor: Colors.amberAccent,
       ),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Center(
@@ -63,63 +85,115 @@ class AboutMe extends StatelessWidget {
                 SizedBox(
                   height: 15,
                 ),
-                /**
-                 * CARD CONTAINER ANDROID
-                 */
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.amberAccent,
-                      borderRadius: BorderRadius.circular(15),
-                      border: Border.all(
-                        color: Colors.black12,
-                        width: 2,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          blurRadius: 2,
-                          offset: Offset(2, 3),
-                          color: Colors.redAccent,
-                        ),
-                      ]),
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        width: 75,
-                        height: 75,
-                        decoration: BoxDecoration(
-                          color: Colors.greenAccent,
-                          borderRadius: BorderRadius.circular(
-                            15,
+                Row(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.amber,
+                            borderRadius: BorderRadius.circular(
+                              20,
+                            ),
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.greenAccent,
+                                  borderRadius: BorderRadius.circular(
+                                    20,
+                                  ),
+                                ),
+                                child: Icon(
+                                  Icons.gamepad,
+                                  size: 75,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 4.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'GAME PROJECTS',
+                                      style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      '10 GAMES',
+                                      style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                        child: Icon(
-                          Icons.android,
-                          color: Colors.white,
-                          size: 50,
-                        ),
                       ),
-                      Padding(
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Android Project\'s',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Poppins'),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.amber,
+                            borderRadius: BorderRadius.circular(
+                              15,
                             ),
-                            Text(
-                              '10 APK',
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
+                          ),
+                          child: Row(
+                            children: <Widget>[
+                              Container(
+                                width: 75,
+                                height: 75,
+                                decoration: BoxDecoration(
+                                  color: Colors.greenAccent,
+                                  borderRadius: BorderRadius.circular(
+                                    15,
+                                  ),
+                                ),
+                                child: Icon(
+                                  Icons.android,
+                                  color: Colors.white,
+                                  size: 50,
+                                ),
                               ),
-                            ),
-                          ],
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Android Projects'.toUpperCase(),
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'Poppins'),
+                                    ),
+                                    Text(
+                                      '10 APK',
+                                      style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
                 /**
                  * SCHEDULE
@@ -128,71 +202,222 @@ class AboutMe extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(
                     vertical: 10,
                   ),
-                  child: Text(
-                    'Schedule'.toUpperCase(),
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Poppins',
-                      fontSize: 18,
-                      letterSpacing: 2,
+                  child: Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(
+                        20,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: Text(
+                        'Schedule'.toUpperCase(),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Poppins',
+                            fontSize: 18,
+                            letterSpacing: 2,
+                            color: Colors.white),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 ),
-                // ROW SCHEDULE
+                // ROW SCHEDULE  //pastebin.com/e6AmuJLy
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     /**
                      * BELAJAR
                      */
-                    Column(
-                      children: <Widget>[
-                        Text(
-                          'Belajar',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontFamily: 'Poppins',
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        child: Container(
+                          // width: double.infinity,ngasih lebar
+                          decoration: BoxDecoration(
+                            color: Colors.greenAccent,
+                            borderRadius: BorderRadius.circular(
+                              20,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: <Widget>[
+                                Text(
+                                  'Belajar'.toUpperCase(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.timer,
+                                  size: 30,
+                                ),
+                                Text(
+                                  '07.30 - 14.30',
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        Icon(
-                          Icons.timer,
-                          size: 30,
-                        ),
-                        Text(
-                          '07.30 - 14.30',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                     /**
                      * MEMBACA
                      */
-                    Column(
-                      children: <Widget>[
-                        Text(
-                          'MEMBACA',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontFamily: 'Poppins',
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.amberAccent,
+                            borderRadius: BorderRadius.circular(
+                              20,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: <Widget>[
+                                Text(
+                                  'MEMBACA',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.book,
+                                  size: 30,
+                                ),
+                                Text(
+                                  '20.00 - 21.00',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        Icon(
-                          Icons.book,
-                          size: 30,
-                        ),
-                        Text(
-                          '20.00 - 21.00',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'Poppins',
+                      ),
+                    ),
+                    /**
+                     * TIDUR
+                     */
+                    Expanded(
+                      flex: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.blueAccent,
+                            borderRadius: BorderRadius.circular(
+                              20,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: <Widget>[
+                                Text(
+                                  'TIDUR',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.bed,
+                                  size: 30,
+                                ),
+                                Text(
+                                  '21.30 - 03.15',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ],
+                      ),
                     ),
                   ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.cyanAccent,
+                    borderRadius: BorderRadius.circular(
+                      20,
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 8.0,
+                    ),
+                    child: Text(
+                      'BADGES',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        letterSpacing: 5,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 110,
+                  child: ListView(
+                    /**
+                     * badgesList = Variabel list diatas
+                     * element    = nama varibale dari map
+                     * return     = tempat widget dari data list
+                     */
+                    scrollDirection: Axis.horizontal,
+                    children: badgeList.map((element) {
+                      return Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Container(
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            color: Colors.redAccent,
+                            borderRadius: BorderRadius.circular(
+                              20,
+                            ),
+                          ),
+                          child: Center(
+                            child: Text(
+                              '${element}',
+                              style: TextStyle(
+                                fontSize: 60,
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
                 ),
               ],
             ),
