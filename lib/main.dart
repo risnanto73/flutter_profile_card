@@ -12,7 +12,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: AboutMe(),
+      home: ProfileCard(),
       debugShowCheckedModeBanner: false,
     );
   }

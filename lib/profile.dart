@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/detail.dart';
 
 class ProfileCard extends StatelessWidget {
   const ProfileCard({Key? key}) : super(key: key);
+
+  final title = 'Tio Risnanto';
 
   final List<String> badges = const <String>[
     '🏅',
@@ -44,7 +47,7 @@ class ProfileCard extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'About Me',
+          'About $title',
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),
@@ -228,6 +231,35 @@ class ProfileCard extends StatelessWidget {
                       ),
                     ),
                   ],
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailAboutMe(title),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(
+                        15,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'DETAIL PROFILE',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
                 /**
                  * SCHEDULE
